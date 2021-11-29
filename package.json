@@ -4,7 +4,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "watch-css": "sass src/scss/main.scss src/css/style.min.css --style=compressed --no-source-map --watch",
+    "build-css": "sass src/scss/main.scss src/css/style.min.css --style=compressed --no-source-map"
   },
   "devDependencies": {
     "sass": "^1.43.5",

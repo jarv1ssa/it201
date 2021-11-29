@@ -1,0 +1,361 @@
+@use "../abstracts" as *;
+
+$utilities: (
+  position: (
+    prefix: p,
+    values: (
+      relative: relative,
+      absolute: absolute,
+      sticky: sticky,
+    ),
+  ),
+  display: (
+    prefix: d,
+    values: (
+      none: none,
+      block: block,
+      flex: flex,
+      grid: grid,
+    ),
+  ),
+  justify-content: (
+    prefix: justify,
+    values: (
+      start: flex-start,
+      end: flex-end,
+      center: center,
+      between: space-between,
+      around: space-around,
+      evenly: space-evenly,
+    ),
+  ),
+  align-items: (
+    prefix: align,
+    values: (
+      stretch: stretch,
+      start: flex-start,
+      end: flex-end,
+      center: center,
+      baseline: baseline,
+    ),
+  ),
+  align-self: (
+    prefix: align-self,
+    values: (
+      auto: auto,
+      stretch: stretch,
+      start: flex-start,
+      end: flex-end,
+      center: center,
+      baseline: baseline,
+    ),
+  ),
+  inset: (
+    prefix: inset,
+    values: (
+      0: 0,
+      1: 0.5rem,
+      2: 1rem,
+      3: 1.5rem,
+      4: 2rem,
+      5: 2.5rem,
+      6: 3rem,
+      7: 3.5rem,
+      8: 4rem,
+      9: 4.5rem,
+      10: 5rem,
+    ),
+  ),
+  left: (
+    prefix: l,
+    values: (
+      0: 0,
+      1: 0.5rem,
+      2: 1rem,
+      3: 1.5rem,
+      4: 2rem,
+      5: 2.5rem,
+      6: 3rem,
+      7: 3.5rem,
+      8: 4rem,
+      9: 4.5rem,
+      10: 5rem,
+    ),
+  ),
+  right: (
+    prefix: r,
+    values: (
+      0: 0,
+      1: 0.5rem,
+      2: 1rem,
+      3: 1.5rem,
+      4: 2rem,
+      5: 2.5rem,
+      6: 3rem,
+      7: 3.5rem,
+      8: 4rem,
+      9: 4.5rem,
+      10: 5rem,
+    ),
+  ),
+  top: (
+    prefix: t,
+    values: (
+      0: 0,
+      1: 0.5rem,
+      2: 1rem,
+      3: 1.5rem,
+      4: 2rem,
+      5: 2.5rem,
+      6: 3rem,
+      7: 3.5rem,
+      8: 4rem,
+      9: 4.5rem,
+      10: 5rem,
+    ),
+  ),
+  bottom: (
+    prefix: b,
+    values: (
+      0: 0,
+      1: 0.5rem,
+      2: 1rem,
+      3: 1.5rem,
+      4: 2rem,
+      5: 2.5rem,
+      6: 3rem,
+      7: 3.5rem,
+      8: 4rem,
+      9: 4.5rem,
+      10: 5rem,
+    ),
+  ),
+  margin: (
+    prefix: m,
+    values: (
+      0: 0,
+      1: 0.5rem,
+      2: 1rem,
+      3: 1.5rem,
+      4: 2rem,
+      5: 2.5rem,
+      6: 3rem,
+      7: 3.5rem,
+      8: 4rem,
+      9: 4.5rem,
+      10: 5rem,
+    ),
+  ),
+  margin-left: (
+    prefix: ml,
+    values: (
+      0: 0,
+      1: 0.5rem,
+      2: 1rem,
+      3: 1.5rem,
+      4: 2rem,
+      5: 2.5rem,
+      6: 3rem,
+      7: 3.5rem,
+      8: 4rem,
+      9: 4.5rem,
+      10: 5rem,
+    ),
+  ),
+  margin-right: (
+    prefix: mr,
+    values: (
+      0: 0,
+      1: 0.5rem,
+      2: 1rem,
+      3: 1.5rem,
+      4: 2rem,
+      5: 2.5rem,
+      6: 3rem,
+      7: 3.5rem,
+      8: 4rem,
+      9: 4.5rem,
+      10: 5rem,
+    ),
+  ),
+  margin-top: (
+    prefix: mt,
+    values: (
+      0: 0,
+      1: 0.5rem,
+      2: 1rem,
+      3: 1.5rem,
+      4: 2rem,
+      5: 2.5rem,
+      6: 3rem,
+      7: 3.5rem,
+      8: 4rem,
+      9: 4.5rem,
+      10: 5rem,
+    ),
+  ),
+  margin-bottom: (
+    prefix: mb,
+    values: (
+      0: 0,
+      1: 0.5rem,
+      2: 1rem,
+      3: 1.5rem,
+      4: 2rem,
+      5: 2.5rem,
+      6: 3rem,
+      7: 3.5rem,
+      8: 4rem,
+      9: 4.5rem,
+      10: 5rem,
+    ),
+  ),
+  padding: (
+    prefix: p,
+    values: (
+      0: 0,
+      1: 0.5rem,
+      2: 1rem,
+      3: 1.5rem,
+      4: 2rem,
+      5: 2.5rem,
+      6: 3rem,
+      7: 3.5rem,
+      8: 4rem,
+      9: 4.5rem,
+      10: 5rem,
+    ),
+  ),
+  padding-left: (
+    prefix: pl,
+    values: (
+      0: 0,
+      1: 0.5rem,
+      2: 1rem,
+      3: 1.5rem,
+      4: 2rem,
+      5: 2.5rem,
+      6: 3rem,
+      7: 3.5rem,
+      8: 4rem,
+      9: 4.5rem,
+      10: 5rem,
+    ),
+  ),
+  padding-right: (
+    prefix: pr,
+    values: (
+      0: 0,
+      1: 0.5rem,
+      2: 1rem,
+      3: 1.5rem,
+      4: 2rem,
+      5: 2.5rem,
+      6: 3rem,
+      7: 3.5rem,
+      8: 4rem,
+      9: 4.5rem,
+      10: 5rem,
+    ),
+  ),
+  padding-top: (
+    prefix: pt,
+    values: (
+      0: 0,
+      1: 0.5rem,
+      2: 1rem,
+      3: 1.5rem,
+      4: 2rem,
+      5: 2.5rem,
+      6: 3rem,
+      7: 3.5rem,
+      8: 4rem,
+      9: 4.5rem,
+      10: 5rem,
+    ),
+  ),
+  padding-bottom: (
+    prefix: pb,
+    values: (
+      0: 0,
+      1: 0.5rem,
+      2: 1rem,
+      3: 1.5rem,
+      4: 2rem,
+      5: 2.5rem,
+      6: 3rem,
+      7: 3.5rem,
+      8: 4rem,
+      9: 4.5rem,
+      10: 5rem,
+    ),
+  ),
+  text-align: (
+    prefix: text,
+    values: (
+      left: left,
+      right: right,
+      center: center,
+      justify: justify,
+    ),
+  ),
+  opacity: (
+    prefix: o,
+    values: (
+      0: 0,
+      10: 0.1,
+      20: 0.2,
+      30: 0.3,
+      40: 0.4,
+      50: 0.5,
+      60: 0.6,
+      70: 0.7,
+      80: 0.8,
+      90: 0.9,
+      100: 1,
+    ),
+  ),
+);
+
+@each $property, $map in $utilities {
+  $prefix: map-get($map, "prefix");
+  $values: map-get($map, "values");
+
+  @each $key, $value in $values {
+    @include xs {
+      .#{$prefix}-#{$key} {
+        #{$property}: $value;
+      }
+    }
+
+    @include sm {
+      .sm\:#{$prefix}-#{$key} {
+        #{$property}: $value;
+      }
+    }
+
+    @include md {
+      .md\:#{$prefix}-#{$key} {
+        #{$property}: $value;
+      }
+    }
+
+    @include lg {
+      .lg\:#{$prefix}-#{$key} {
+        #{$property}: $value;
+      }
+    }
+
+    @include xl {
+      .xl\:#{$prefix}-#{$key} {
+        #{$property}: $value;
+      }
+    }
+
+    @include xxl {
+      .xxl\:#{$prefix}-#{$key} {
+        #{$property}: $value;
+      }
+    }
+  }
+}
