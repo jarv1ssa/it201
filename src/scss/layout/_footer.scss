@@ -1,0 +1,47 @@
+@use "../abstracts" as *;
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 1rem 0;
+
+  &__nav {
+    margin-bottom: 1rem;
+
+    ul {
+      list-style-type: none;
+
+      a {
+        color: var(--color-primary);
+        text-decoration: none;
+        font-size: 1.2rem;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  &__body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    p {
+      margin: 0 auto;
+      color: rgba(0, 0, 0, 0.5);
+
+      span {
+        color: initial;
+      }
+    }
+
+    a {
+      color: var(--color-primary);
+      font-size: 1.5rem;
+    }
+  }
+}
