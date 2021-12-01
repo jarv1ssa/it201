@@ -1,0 +1,160 @@
+@use "../abstracts" as *;
+
+.about {
+  &__hero {
+    padding: 2.5rem 1rem;
+    background-image: url("/images/about_right.png");
+    background-size: auto 100%;
+    background-position: 200px 50%;
+    background-repeat: no-repeat;
+
+    div {
+      width: 75%;
+      max-width: 860px;
+      color: var(--text-color-primary);
+
+      @include sm {
+        width: 60%;
+      }
+    }
+
+    &--title {
+      margin-bottom: 1.5rem;
+      font-size: 1.5rem;
+      font-weight: 500;
+
+      @include md {
+        font-size: 1.75rem;
+      }
+
+      @include lg {
+        font-size: 2rem;
+      }
+
+      @include xxl {
+        font-size: 2.5rem;
+        font-weight: bold;
+      }
+    }
+
+    &--subtitle {
+      font-size: 0.875rem;
+
+      @include lg {
+        font-size: 1rem;
+      }
+    }
+
+    @media (min-width: 440px) {
+      background-size: contain;
+      background-position: 125% 50%;
+    }
+
+    @include sm {
+      display: flex;
+      justify-content: center;
+      padding: 3rem 1rem;
+      background-image: url("/images/about_left.png"),
+        url("/images/about_right.png");
+      background-size: contain;
+      background-position: -25% 50%, 125% 50%;
+      text-align: center;
+    }
+
+    @media (min-width: 680px) {
+      background-position: -20% 50%, 120% 50%;
+    }
+
+    @media (min-width: 700px) {
+      padding: 4rem 1rem;
+      background-position: -10% 50%, 110% 50%;
+    }
+
+    @include lg {
+      padding: 5rem 1rem;
+      background-position: -10% 50%, 110% 50%;
+    }
+
+    @include xl {
+      padding: 8rem 1rem;
+      background-position: 0 50%, 100% 50%;
+    }
+  }
+
+  &__team {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5rem 1rem;
+    text-align: center;
+
+    .row {
+      justify-content: center;
+    }
+
+    &--title {
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+      font-weight: 500;
+
+      @include md {
+        font-size: 2rem;
+      }
+
+      @include lg {
+        font-size: 2.5rem;
+      }
+    }
+
+    &--subtitle {
+      max-width: 600px;
+      font-size: 1rem;
+      line-height: 1.5rem;
+
+      a {
+        color: var(--color-primary);
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    &--members {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      padding: 2rem 0;
+    }
+
+    &--member {
+      img {
+        width: 56px;
+        margin-bottom: 1rem;
+      }
+
+      &--name {
+        margin-bottom: 0.25rem;
+        font-size: 0.75rem;
+        font-weight: 700;
+
+        @include lg {
+          font-size: 1rem;
+        }
+      }
+
+      &--position {
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 0.625rem;
+        font-weight: 500;
+        text-transform: uppercase;
+
+        @include lg {
+          font-size: 0.75rem;
+        }
+      }
+    }
+  }
+}
