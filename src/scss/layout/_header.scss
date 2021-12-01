@@ -17,24 +17,27 @@
     gap: 0.5rem;
     margin-bottom: 1rem;
 
-    svg {
-      width: auto;
-
-      @include xs {
-        height: 2rem;
-      }
-
-      @include md {
-        height: 2.5rem;
-      }
-    }
-
     a {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
       color: #fff;
       text-decoration: none;
       font-size: 1.5rem;
       font-weight: bold;
       user-select: none;
+
+      svg {
+        width: auto;
+
+        @include xs {
+          height: 2rem;
+        }
+
+        @include md {
+          height: 2.5rem;
+        }
+      }
     }
 
     @include sm {

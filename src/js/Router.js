@@ -23,11 +23,23 @@ export default class Router {
     return match;
   }
 
-  static render() {
-    const View = this.matchRoute().route.view;
+  static navigate(data, unused, url) {
+    history.pushState(data, unused, url);
+    this.render();
+  }
 
-    document
-      .querySelector("footer")
-      .insertAdjacentHTML("beforebegin", View.getHtml());
+  static render() {
+    const route = this.matchRoute().route;
+    const main = document.querySelector("main");
+
+    if (main.classList[main.classList.length - 1] === route.name) {
+      return;
+    }
+
+    main.classList.replace(
+      main.classList[main.classList.length - 1],
+      route.name
+    );
+    main.innerHTML = route.view.getHtml();
   }
 }
