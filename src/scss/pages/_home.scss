@@ -1,0 +1,41 @@
+@use "../abstracts" as *;
+
+.home {
+  background-color: var(--bg-color-primary);
+  color: #fff;
+
+  &__left {
+    margin-bottom: 4rem;
+
+    &--title {
+      margin-bottom: 1rem;
+      font-size: 3rem;
+      font-weight: bold;
+    }
+
+    &--subtitle {
+      margin-bottom: 1rem;
+      color: #f1c84b;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    &--description {
+      font-size: 1.25rem;
+    }
+
+    @include md {
+      margin-bottom: 0;
+    }
+  }
+
+  &__right {
+    &--image {
+      width: 100%;
+    }
+  }
+
+  @include md {
+    padding: 4rem 0;
+  }
+}

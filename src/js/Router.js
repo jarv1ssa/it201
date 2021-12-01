@@ -26,6 +26,6 @@ export default class Router {
   static render() {
     const view = this.matchRoute().route.view;
 
-    document.querySelector("main").innerHTML = view.getHtml();
+    // document.querySelector("main").innerHTML = view.getHtml();
   }
 }
