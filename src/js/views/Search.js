@@ -3,8 +3,6 @@ import View from "./View";
 
 export default class extends View {
   static getHtml() {
-    Categories.generateStyleSheet();
-
     return `
       <div class="container">
         <div class="categories">
