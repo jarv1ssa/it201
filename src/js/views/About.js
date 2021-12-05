@@ -6,12 +6,11 @@ export default class extends View {
       <section class="about__hero">
         <div>
           <p class="about__hero--title">
-            Accessible giving infrastructure to help every person and
-            organization use technology for good.
+            Help others without any reason and give without the expectation of receiving anything in return.
           </p>
 
           <p class="about__hero--subtitle">
-            Every.org is a 501(c)(3) charity supported entirely by donations.
+            We aim to make a difference in the nonprofit community.
           </p>
         </div>
       </section>
@@ -20,28 +19,28 @@ export default class extends View {
         <p class="about__team--title">Team</p>
 
         <p class="about__team--subtitle">
-          We're a global, fully remote team that wants to help high-impact
-          nonprofits get the unrestricted, recurring funding needed to focus
-          on their work. If you have a passion for helping nonprofits and
+          We are a team of university students that wants to ease the access
+          to a variety of nonprofits and charities to help nonprofits and givers.
+          If you have a passion for helping nonprofits and
           givers, contact us at
-          <a href="mailto:team@every.org">team@every.org.</a>
+          <a href="mailto:team@example.com">team@example.com.</a>
         </p>
 
         <div class="about__team--members">
           <div class="about__team--member">
-            <img src="./src/images/emin.jpg" alt="Emin Aliyev" />
+            <i class="far fa-user"></i>
             <p class="about__team--member--name">Emin Aliyev</p>
             <p class="about__team--member--position">Developer</p>
           </div>
 
           <div class="about__team--member">
-            <img src="./src/images/nisanur.jpg" alt="Nisanur Guvensoy" />
+            <i class="far fa-user"></i>
             <p class="about__team--member--name">Nisanur Guvensoy</p>
             <p class="about__team--member--position">Developer</p>
           </div>
 
           <div class="about__team--member">
-            <img src="./src/images/sadik.jpg" alt="Sadik Solmaz" />
+            <i class="far fa-user"></i>
             <p class="about__team--member--name">Sadik Solmaz</p>
             <p class="about__team--member--position">Developer</p>
           </div>

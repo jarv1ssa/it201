@@ -1,5 +1,4 @@
 import Component from "./Component";
-import Router from "../Router";
 import categories from "../common/categories";
 
 export default class extends Component {
@@ -23,12 +22,23 @@ export default class extends Component {
       sheet.innerHTML += style;
     });
 
-    document.body.appendChild(sheet);
-  }
+    const param = new URLSearchParams(location.search).get("categories");
+    let specificStyle = "";
 
-  static navigateWithoutRefresh(event) {
-    event.preventDefault();
-    Router.navigate(null, null, event.currentTarget.href);
+    if (param) {
+      specificStyle = `
+        #${param} {
+          background-color: ${
+            categories.find((category) => category.id === param).selectedBgColor
+          };
+          color: #fff;
+        }
+      `;
+    }
+
+    sheet.innerHTML += specificStyle;
+
+    document.body.appendChild(sheet);
   }
 
   static getCategories() {
@@ -38,7 +48,7 @@ export default class extends Component {
       this.list.push(`
         <li>
           <a href="/search?categories=${category.id}" id="${category.id}" data-link="${category.id}">
-            <img src="./src/images/${category.icon}">
+            <img src="./images/${category.icon}">
             <span>${category.name}</span>
           </a>
         </li>

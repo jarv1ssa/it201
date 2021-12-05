@@ -15,14 +15,13 @@ export default class extends View {
             </p>
 
             <p class="home__left--description">
-              Explore, donate, and share. Over one million registered
-              charities.
+              Explore, donate, and share. Make a difference today.
             </p>
           </div>
 
           <div class="home__right col-12 md:col-6">
             <img
-              src="./src/images/onboarding.svg"
+              src="./images/onboarding.svg"
               alt="Onboarding"
               class="home__right--image"
             />
