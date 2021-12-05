@@ -1,10 +1,11 @@
+@use "../abstracts" as *;
+
 .search {
   .container {
-    display: flex;
-
     .categories {
+      display: none;
+      min-width: 30%;
       padding: 3rem 0;
-      flex-basis: 25%;
 
       ul {
         list-style-type: none;
@@ -28,10 +29,93 @@
           }
         }
       }
+
+      @include lg {
+        display: unset;
+      }
     }
 
     .results {
-      flex-grow: 1;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      padding: 3rem 0;
+
+      .result {
+        display: flex;
+        flex-direction: column;
+        border-radius: 1rem;
+        overflow: hidden;
+
+        img {
+          width: 100%;
+        }
+
+        &__body {
+          display: flex;
+          flex-direction: column;
+          padding: 1rem;
+          border-radius: 0 0 1rem 1rem;
+
+          img {
+            align-self: flex-end;
+            width: 64px;
+            margin-top: -50px;
+            margin-bottom: 0.5rem;
+            border-radius: 50%;
+
+            @include lg {
+              margin-bottom: 0;
+            }
+          }
+
+          div {
+            width: 90%;
+          }
+        }
+
+        &__name {
+          margin-bottom: 0.3rem;
+          font-size: 1.5rem;
+          font-weight: bold;
+        }
+
+        &__location {
+          margin-bottom: 1.5rem;
+          color: rgba(0, 0, 0, 0.6);
+          font-size: 0.75rem;
+          font-weight: 500;
+          text-transform: uppercase;
+        }
+
+        &__description {
+          line-height: 1.5rem;
+          text-align: justify;
+        }
+
+        a {
+          align-self: flex-end;
+          margin-top: 1rem;
+          background-color: var(--color-primary);
+          color: #fff;
+          padding: 0.625rem 1rem;
+          border-radius: 500px;
+          text-decoration: none;
+
+          &:hover {
+            background-color: rgba(52, 152, 219, 0.9);
+          }
+        }
+      }
+
+      @include md {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @include lg {
+      display: flex;
+      gap: 2rem;
     }
   }
 }

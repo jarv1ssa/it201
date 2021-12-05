@@ -1,6 +1,6 @@
-import About from "./views/About";
-import Home from "./views/Home";
-import Search from "./views/Search";
+import About from "../views/About";
+import Home from "../views/Home";
+import Search from "../views/Search";
 
 export default [
   { name: "home", path: "/", view: Home },

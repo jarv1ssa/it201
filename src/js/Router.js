@@ -1,4 +1,4 @@
-import routes from "./routes";
+import routes from "./common/routes";
 
 export default class Router {
   constructor() {}
@@ -31,10 +31,6 @@ export default class Router {
   static render() {
     const route = this.matchRoute().route;
     const main = document.querySelector("main");
-
-    if (main.classList[main.classList.length - 1] === route.name) {
-      return;
-    }
 
     main.classList.replace(
       main.classList[main.classList.length - 1],

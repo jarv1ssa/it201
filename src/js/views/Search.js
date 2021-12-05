@@ -1,8 +1,15 @@
 import Categories from "../components/Categories";
+import Results from "../components/Results";
 import View from "./View";
+
+document.addEventListener("resultsgot", (event) => {
+  document.querySelector(".results").innerHTML = event.detail;
+});
 
 export default class extends View {
   static getHtml() {
+    Results.getResults(Results.getCategories());
+
     return `
       <div class="container">
         <div class="categories">
@@ -10,7 +17,6 @@ export default class extends View {
         </div>
 
         <div class="results">
-          salam
         </div>
       </div>
     `;

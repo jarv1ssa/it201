@@ -1,5 +1,6 @@
 import Component from "./Component";
-import categories from "../categories";
+import Router from "../Router";
+import categories from "../common/categories";
 
 export default class extends Component {
   static list = [];
@@ -25,13 +26,18 @@ export default class extends Component {
     document.body.appendChild(sheet);
   }
 
+  static navigateWithoutRefresh(event) {
+    event.preventDefault();
+    Router.navigate(null, null, event.currentTarget.href);
+  }
+
   static getCategories() {
     this.list = [];
 
     categories.forEach((category) => {
       this.list.push(`
         <li>
-          <a href="/search?causes=${category.id}" id="${category.id}">
+          <a href="/search?categories=${category.id}" id="${category.id}" data-link="${category.id}">
             <img src="./src/images/${category.icon}">
             <span>${category.name}</span>
           </a>
